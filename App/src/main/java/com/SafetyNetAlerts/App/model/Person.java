@@ -1,6 +1,7 @@
 package com.SafetyNetAlerts.App.model;
 
 
+
 public class Person {
 
       private String firstName;

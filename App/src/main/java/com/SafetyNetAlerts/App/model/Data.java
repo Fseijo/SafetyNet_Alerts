@@ -4,13 +4,13 @@ import java.util.List;
 
 public class Data {
       private List<Person> persons;
-      private List<FireStations> fireStations;
+      private List<FireStation> fireStations;
       private List<MedicalRecords> medicalRecords ;
 
       public Data() {
       }
 
-      public Data(List<Person> persons, List<FireStations> fireStations, List<MedicalRecords> medicalRecords) {
+      public Data(List<Person> persons, List<FireStation> fireStations, List<MedicalRecords> medicalRecords) {
             this.persons = persons;
             this.fireStations = fireStations;
             this.medicalRecords = medicalRecords;
@@ -25,11 +25,11 @@ public class Data {
             this.persons = persons;
       }
 
-      public List<FireStations> getFireStations() {
+      public List<FireStation> getFireStations() {
             return fireStations;
       }
 
-      public void setFireStations(List<FireStations> fireStations) {
+      public void setFireStations(List<FireStation> fireStations) {
             this.fireStations = fireStations;
       }
 

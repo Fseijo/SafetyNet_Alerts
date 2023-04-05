@@ -1,13 +1,13 @@
 package com.SafetyNetAlerts.App.model;
 
-public class FireStations {
+public class FireStation {
       private String address;
       private String station;
 
-      public FireStations() {
+      public FireStation() {
       }
 
-      public FireStations(String address, String station) {
+      public FireStation(String address, String station) {
             this.address = address;
             this.station = station;
       }
