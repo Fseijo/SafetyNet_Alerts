@@ -21,8 +21,11 @@ public class PersonRepository {
       }
 
       public List<Person> findAllPersonsByAddress(String address){
-            return readJsonFile.getData().getPersons().stream().filter(p -> p.getAddress().equals(address)).collect(Collectors.toList());
+            return readJsonFile.getData().getPersons().stream()
+                    .filter(p -> p.getAddress().equals(address))
+                    .collect(Collectors.toList());
       }
+
 
 
 }

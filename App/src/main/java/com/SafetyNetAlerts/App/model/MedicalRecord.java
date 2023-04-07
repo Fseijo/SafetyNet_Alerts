@@ -1,8 +1,6 @@
 package com.SafetyNetAlerts.App.model;
 
-import java.util.List;
-
-public class MedicalRecords {
+public class MedicalRecord {
 
       private String firstName;
       private String lastName;
@@ -10,10 +8,8 @@ public class MedicalRecords {
       private String[] medications;
       private String[] allergies;
 
-      public MedicalRecords() {
-      }
 
-      public MedicalRecords(String firstName, String lastName, String birthdate, String[] medications, String[] allergies) {
+      public MedicalRecord(String firstName, String lastName, String birthdate, String[] medications, String[] allergies) {
             this.firstName = firstName;
             this.lastName = lastName;
             this.birthdate = birthdate;

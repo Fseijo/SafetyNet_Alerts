@@ -1,9 +1,7 @@
 package com.SafetyNetAlerts.App.controller;
 
-import com.SafetyNetAlerts.App.model.Person;
-
+import com.SafetyNetAlerts.App.service.dto.FireDTO;
 import com.SafetyNetAlerts.App.service.PersonService;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -20,20 +18,13 @@ public class PersonController {
             return personService.findAllEmailsByCity(city);
       }
 
-//      @RequestMapping(value = "phoneAlert", method = RequestMethod.GET)
-//      public List<String> listPhoneNumberByFirestation(@RequestParam(name = "firestationToFind")String firestationToFind){
-//            return personService.findAllPhoneNumbersByFireStation(firestationToFind);
-//      }
       @RequestMapping(value = "phoneAlert", method = RequestMethod.GET)
-      public List<String> listPhoneNumberByFirestationSteam(@RequestParam(name = "station")String station){
-            return personService.findAllPhoneByFireStation(station);
+      public List<String> listPhoneNumberByFirestation(@RequestParam(name = "firestationToFind")String firestationToFind){
+            return personService.findAllPhoneNumbersByFireStation(firestationToFind);
       }
 
-
-
-//      @GetMapping("/person")
-//      public List<Person> listePersons(){
-//            return personService.findAllPersons();
-//      }
-
+      @RequestMapping(value = "fire", method = RequestMethod.GET)
+      public List<FireDTO> listPeopleByAddress(@RequestParam(name = "addressToFind") String addressToFind){
+            return personService.getListFireDTO(addressToFind);
+      }
 }

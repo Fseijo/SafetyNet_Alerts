@@ -5,12 +5,12 @@ import java.util.List;
 public class Data {
       private List<Person> persons;
       private List<FireStation> fireStations;
-      private List<MedicalRecords> medicalRecords ;
+      private List<MedicalRecord> medicalRecords ;
 
       public Data() {
       }
 
-      public Data(List<Person> persons, List<FireStation> fireStations, List<MedicalRecords> medicalRecords) {
+      public Data(List<Person> persons, List<FireStation> fireStations, List<MedicalRecord> medicalRecords) {
             this.persons = persons;
             this.fireStations = fireStations;
             this.medicalRecords = medicalRecords;
@@ -33,11 +33,11 @@ public class Data {
             this.fireStations = fireStations;
       }
 
-      public List<MedicalRecords> getMedicalRecords() {
+      public List<MedicalRecord> getMedicalRecords() {
             return medicalRecords;
       }
 
-      public void setMedicalRecords(List<MedicalRecords> medicalRecords) {
+      public void setMedicalRecords(List<MedicalRecord> medicalRecords) {
             this.medicalRecords = medicalRecords;
       }
 

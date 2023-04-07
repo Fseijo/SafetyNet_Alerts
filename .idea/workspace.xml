@@ -4,30 +4,30 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1c02d7d1-ef26-48e3-8954-be141958b1a4" name="Changes" comment="Update 1.1.1">
-      <change afterPath="$PROJECT_DIR$/App/src/main/java/com/SafetyNetAlerts/App/repository/PersonRepository.java" afterDir="false" />
+    <list default="true" id="1c02d7d1-ef26-48e3-8954-be141958b1a4" name="Changes" comment="Update 1.2.0">
+      <change afterPath="$PROJECT_DIR$/App/src/main/java/com/SafetyNetAlerts/App/service/dto/FireDTO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/App/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/App/src/main/java/com/SafetyNetAlerts/App/analytics/ReadJsonFile.java" beforeDir="false" afterPath="$PROJECT_DIR$/App/src/main/java/com/SafetyNetAlerts/App/analytics/ReadJsonFile.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/src/main/java/com/SafetyNetAlerts/App/controller/FireStController.java" beforeDir="false" afterPath="$PROJECT_DIR$/App/src/main/java/com/SafetyNetAlerts/App/controller/FireStController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/src/main/java/com/SafetyNetAlerts/App/controller/MedicalRecController.java" beforeDir="false" afterPath="$PROJECT_DIR$/App/src/main/java/com/SafetyNetAlerts/App/controller/MedicalRecController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/src/main/java/com/SafetyNetAlerts/App/controller/PersonsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/App/src/main/java/com/SafetyNetAlerts/App/controller/PersonController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/src/main/java/com/SafetyNetAlerts/App/controller/PersonController.java" beforeDir="false" afterPath="$PROJECT_DIR$/App/src/main/java/com/SafetyNetAlerts/App/controller/PersonController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/App/src/main/java/com/SafetyNetAlerts/App/model/Data.java" beforeDir="false" afterPath="$PROJECT_DIR$/App/src/main/java/com/SafetyNetAlerts/App/model/Data.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/src/main/java/com/SafetyNetAlerts/App/model/FireStations.java" beforeDir="false" afterPath="$PROJECT_DIR$/App/src/main/java/com/SafetyNetAlerts/App/model/FireStation.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/src/main/java/com/SafetyNetAlerts/App/model/MedicalRecords.java" beforeDir="false" afterPath="$PROJECT_DIR$/App/src/main/java/com/SafetyNetAlerts/App/model/MedicalRecords.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/src/main/java/com/SafetyNetAlerts/App/model/Person.java" beforeDir="false" afterPath="$PROJECT_DIR$/App/src/main/java/com/SafetyNetAlerts/App/model/Person.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/src/main/java/com/SafetyNetAlerts/App/model/MedicalRecords.java" beforeDir="false" afterPath="$PROJECT_DIR$/App/src/main/java/com/SafetyNetAlerts/App/model/MedicalRecord.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/App/src/main/java/com/SafetyNetAlerts/App/repository/FireStRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/App/src/main/java/com/SafetyNetAlerts/App/repository/FireStRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/App/src/main/java/com/SafetyNetAlerts/App/repository/MedicalRecRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/App/src/main/java/com/SafetyNetAlerts/App/repository/MedicalRecRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/src/main/java/com/SafetyNetAlerts/App/repository/PersonsRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/src/main/java/com/SafetyNetAlerts/App/repository/ReadJsonFileRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/src/main/java/com/SafetyNetAlerts/App/service/FireStService.java" beforeDir="false" afterPath="$PROJECT_DIR$/App/src/main/java/com/SafetyNetAlerts/App/service/FireStService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/src/main/java/com/SafetyNetAlerts/App/repository/PersonRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/App/src/main/java/com/SafetyNetAlerts/App/repository/PersonRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/App/src/main/java/com/SafetyNetAlerts/App/service/MedicalRecService.java" beforeDir="false" afterPath="$PROJECT_DIR$/App/src/main/java/com/SafetyNetAlerts/App/service/MedicalRecService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/src/main/java/com/SafetyNetAlerts/App/service/PersonsService.java" beforeDir="false" afterPath="$PROJECT_DIR$/App/src/main/java/com/SafetyNetAlerts/App/service/PersonService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/src/main/java/com/SafetyNetAlerts/App/service/PersonService.java" beforeDir="false" afterPath="$PROJECT_DIR$/App/src/main/java/com/SafetyNetAlerts/App/service/PersonService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -47,14 +47,14 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "last_opened_file_path": "C:/Users/Frank/IdeaProjects/microcommerce",
-    "settings.editor.selected.configurable": "preferences.lookFeel"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Frank/IdeaProjects/microcommerce&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager">
     <configuration name="SafetyNetAlertsApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.SafetyNetAlerts.App.SafetyNetAlertsApplication" />
@@ -98,45 +98,45 @@
       <option name="project" value="LOCAL" />
       <updated>1680432852330</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Update 1.2.0">
+      <created>1680703097330</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1680703097330</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Update 1.1.1" />
-    <option name="LAST_COMMIT_MESSAGE" value="Update 1.1.1" />
+    <MESSAGE value="Update 1.2.0" />
+    <option name="LAST_COMMIT_MESSAGE" value="Update 1.2.0" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/App/src/main/java/com/SafetyNetAlerts/App/controller/PersonController.java</url>
-          <line>26</line>
-          <option name="timeStamp" value="48" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/App/src/main/java/com/SafetyNetAlerts/App/service/PersonService.java</url>
           <line>72</line>
-          <option name="timeStamp" value="58" />
+          <option name="timeStamp" value="78" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/App/src/main/java/com/SafetyNetAlerts/App/service/PersonService.java</url>
-          <line>69</line>
-          <properties>
-            <option name="lambda-ordinal" value="-1" />
-          </properties>
-          <option name="timeStamp" value="59" />
+          <line>86</line>
+          <option name="timeStamp" value="86" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/App/src/main/java/com/SafetyNetAlerts/App/service/PersonService.java</url>
-          <line>65</line>
-          <option name="timeStamp" value="60" />
+          <url>file://$PROJECT_DIR$/App/src/main/java/com/SafetyNetAlerts/App/controller/PersonController.java</url>
+          <line>27</line>
+          <option name="timeStamp" value="87" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
-    <watches-manager>
-      <configuration name="Application">
-        <watch expression="perObj" language="JAVA" />
-      </configuration>
-    </watches-manager>
+    <pin-to-top-manager>
+      <pinned-members>
+        <PinnedItemInfo parentTag="java.util.stream.ReferencePipeline$Head" memberName="combinedFlags" />
+      </pinned-members>
+    </pin-to-top-manager>
   </component>
 </project>
