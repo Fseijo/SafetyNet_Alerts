@@ -26,4 +26,10 @@ public class FireStRepository {
                     .collect(Collectors.toList());
       }
 
+      public List<FireStation> findAllFireStationsByStationNumber(String stationNumber){
+            return readJsonFile.getData().getFireStations().stream()
+                    .filter(f->f.getStation().equals(stationNumber))
+                    .collect(Collectors.toList());
+      }
+
 }

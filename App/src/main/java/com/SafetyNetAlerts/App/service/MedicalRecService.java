@@ -4,6 +4,7 @@ import com.SafetyNetAlerts.App.repository.PersonRepository;
 import org.springframework.stereotype.Service;
 
 
+
 @Service
 public class MedicalRecService {
 
@@ -12,7 +13,6 @@ public class MedicalRecService {
       public MedicalRecService(PersonRepository personRepository) {
             this.personRepository = personRepository;
       }
-
 
 
 }

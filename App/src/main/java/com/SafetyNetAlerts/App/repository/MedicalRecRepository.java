@@ -15,6 +15,8 @@ public class MedicalRecRepository {
             this.readJsonFile = readJsonFile;
       }
 
+      public List<MedicalRecord> findAllMedicalRecords(){return readJsonFile.getData().getMedicalRecords();}
+
      public MedicalRecord findMedicalRecordByFirstnameAndLastname(String firstName, String lastName){
            return readJsonFile.getData().getMedicalRecords().stream()
                     .filter(m -> m.getFirstName().equals(firstName))

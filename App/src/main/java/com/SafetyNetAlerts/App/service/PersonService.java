@@ -7,7 +7,9 @@ import com.SafetyNetAlerts.App.model.Person;
 import com.SafetyNetAlerts.App.repository.FireStRepository;
 import com.SafetyNetAlerts.App.repository.MedicalRecRepository;
 import com.SafetyNetAlerts.App.repository.PersonRepository;
+import com.SafetyNetAlerts.App.service.dto.ChildAlertDTO;
 import com.SafetyNetAlerts.App.service.dto.FireDTO;
+import com.SafetyNetAlerts.App.service.dto.PersonInfoDTO;
 import org.springframework.stereotype.Service;
 
 
@@ -33,7 +35,18 @@ public class PersonService {
             this.fireStRepository = fireStRepository;
       }
 
+      //Methode pour calculer l'age en String
+      public String calculateAge(String birthdate) {
+            DateTimeFormatter formatter = DateTimeFormatter.ofPattern("MM/dd/yyyy");
+            LocalDate localDate = LocalDate.now();
+            LocalDate bdDate = LocalDate.parse(birthdate, formatter);
+            int age = Period.between(bdDate, localDate).getYears();
 
+            return Integer.toString(age);
+      }
+
+
+      // Retourner une liste d'emails par ville
       public List<String> findAllEmailsByCity(String city) {
             List<Person> personList = personRepository.findAllPersons();
             List<String> emails = new ArrayList<>();
@@ -47,8 +60,8 @@ public class PersonService {
             return emails;
       }
 
-      //Retourner une liste des numéros de téléphone des résidents proches FireStation (forEach)
-      public List<String> findAllPhoneNumbersByFireStation(String firestationToFind) {
+      //Retourner une liste des numéros de téléphone des résidents proches FireStation
+      public List<String> findAllPhoneNumbersByFireStation(String fireStationToFind) {
 
             List<Person> personList = personRepository.findAllPersons();
             List<FireStation> fireStationsList = fireStRepository.findAllFireStations();
@@ -56,7 +69,7 @@ public class PersonService {
 
             for (Person person : personList) {
                   for (FireStation fireStation : fireStationsList) {
-                        if (fireStation.getStation().equals(firestationToFind) && fireStation.getAddress().equals(person.getAddress())) {
+                        if (fireStation.getStation().equals(fireStationToFind) && fireStation.getAddress().equals(person.getAddress())) {
                               phones.add(person.getPhone());
                         }
                   }
@@ -64,34 +77,56 @@ public class PersonService {
             return phones;
       }
 
+      // Retourner la liste des habitants vivant à l’adresse donnée ainsi que le numéro de la FStation
       public List<FireDTO> getListFireDTO(String address) {
 
             List<FireDTO> fireDTOList = new ArrayList<>();
             List<Person> personList = personRepository.findAllPersonsByAddress(address);
             List<FireStation> stationList = fireStRepository.findAllFireStationsByAddress(address);
-            List<String> stationsNumbers =  stationList.stream().map(FireStation::getStation).collect(Collectors.toList());
+            List<String> stationsNumbers = stationList.stream().map(FireStation::getStation).collect(Collectors.toList());
 
             for (Person person : personList) {
                   MedicalRecord medicalRecord = medicalRecRepository.findMedicalRecordByFirstnameAndLastname(person.getFirstName(), person.getLastName());
                   String age = calculateAge(medicalRecord.getBirthdate());
-                  FireDTO fireDTO = new FireDTO(person.getLastName(),
-                          person.getPhone(),
-                          age,
-                          medicalRecord.getMedications(),
-                          medicalRecord.getAllergies(),stationsNumbers);
+                  FireDTO fireDTO = new FireDTO(person.getLastName(), person.getPhone(), age, medicalRecord.getMedications(), medicalRecord.getAllergies(), stationsNumbers);
                   fireDTOList.add(fireDTO);
             }
             return fireDTOList;
 
       }
 
-      public String calculateAge(String birthdate) {
-            DateTimeFormatter formatter = DateTimeFormatter.ofPattern("MM/dd/yyyy");
-            LocalDate localDate = LocalDate.now();
-            LocalDate bdDate = LocalDate.parse(birthdate, formatter);
-            int age = Period.between(bdDate, localDate).getYears();
+      // Retourner une liste d'enfants par adresse
+      public List<ChildAlertDTO> getListChildAlertDTO(String address) {
+            List<ChildAlertDTO> childAlertDTOList = new ArrayList<>();
+            List<Person> personList = personRepository.findAllPersonsByAddress(address);
 
-            return Integer.toString(age);
+            for (Person person : personList) {
+                  MedicalRecord medicalRecord = medicalRecRepository.findMedicalRecordByFirstnameAndLastname(person.getFirstName(), person.getLastName());
+                  String age = calculateAge(medicalRecord.getBirthdate());
+                  Integer ageInt = Integer.parseInt(age);
+                  if (ageInt <= 18) {
+                        List<Person> personList1 = personRepository.findFamilyMembersByLastName(person.getFirstName(), person.getLastName());
+                        List<String> familyMembersList = personList1.stream().map(Person::getFirstName).collect(Collectors.toList());
+                        ChildAlertDTO childAlertDTO = new ChildAlertDTO(person.getFirstName(), person.getLastName(), age, familyMembersList);
+                        childAlertDTOList.add(childAlertDTO);
+                  }
+            }
+            return childAlertDTOList;
+      }
+
+      // Retourner les informations de chaque personne
+
+      public List<PersonInfoDTO> getListPersonInfoDTO(String firstName, String lastName){
+            List<PersonInfoDTO> personInfoDTOList = new ArrayList<>();
+            List<Person> personList = personRepository.findAllPersonsByFirstNameAndLastName(firstName, lastName);
+
+            for (Person person : personList){
+                  MedicalRecord medicalRecord = medicalRecRepository.findMedicalRecordByFirstnameAndLastname(person.getFirstName(), person.getLastName());
+                  String age = calculateAge(medicalRecord.getBirthdate());
+                  PersonInfoDTO personInfoDTO = new PersonInfoDTO(person.getLastName(), person.getAddress(),age, person.getEmail(), medicalRecord.getMedications(), medicalRecord.getAllergies());
+                  personInfoDTOList.add(personInfoDTO);
+            }
+            return personInfoDTOList;
       }
 
 }
