@@ -6,6 +6,7 @@ import com.SafetyNetAlerts.App.service.dto.ChildAlertDTO;
 import com.SafetyNetAlerts.App.service.dto.FireDTO;
 import com.SafetyNetAlerts.App.service.PersonService;
 import com.SafetyNetAlerts.App.service.dto.PersonInfoDTO;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -51,8 +52,19 @@ public class PersonController {
             return personRepository.findAllPersons();
       }
 
-      @PostMapping(value = "/person/addNewPerson")
-      public Person postNewPerson(@RequestBody Person person){
-            return personRepository.saveNewPerson(person);
+      @PostMapping("/person")
+      public ResponseEntity<Person> postNewPerson(@RequestBody Person person){
+       ResponseEntity<Person> personResponseEntity = personService.saveNewPerson(person);
+       return personResponseEntity;
+      }
+
+      @PutMapping(value = "/person")
+      public void updatePersonFromTheList(@RequestBody Person person){
+            personService.updateAnExistingPerson(person);
+      }
+
+      @DeleteMapping(value = "/person")
+      public void deletePerson(@RequestBody Person person){
+            personService.deletePersonByFirstNameAndLastName(person);
       }
 }

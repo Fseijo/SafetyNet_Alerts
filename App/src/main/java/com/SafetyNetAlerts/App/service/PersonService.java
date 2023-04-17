@@ -1,6 +1,7 @@
 package com.SafetyNetAlerts.App.service;
 
 
+import com.SafetyNetAlerts.App.analytics.ReadJsonFile;
 import com.SafetyNetAlerts.App.model.FireStation;
 import com.SafetyNetAlerts.App.model.MedicalRecord;
 import com.SafetyNetAlerts.App.model.Person;
@@ -10,14 +11,18 @@ import com.SafetyNetAlerts.App.repository.PersonRepository;
 import com.SafetyNetAlerts.App.service.dto.ChildAlertDTO;
 import com.SafetyNetAlerts.App.service.dto.FireDTO;
 import com.SafetyNetAlerts.App.service.dto.PersonInfoDTO;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
+import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 
+import java.net.URI;
 import java.time.LocalDate;
 import java.time.Period;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 import java.util.stream.Collectors;
 
 
@@ -27,12 +32,14 @@ public class PersonService {
       private final PersonRepository personRepository;
       private final MedicalRecRepository medicalRecRepository;
       private final FireStRepository fireStRepository;
+      private final ReadJsonFile readJsonFile;
 
 
-      public PersonService(PersonRepository personRepository, MedicalRecRepository medicalRecRepository, FireStRepository fireStRepository) {
+      public PersonService(PersonRepository personRepository, MedicalRecRepository medicalRecRepository, FireStRepository fireStRepository, ReadJsonFile readJsonFile) {
             this.personRepository = personRepository;
             this.medicalRecRepository = medicalRecRepository;
             this.fireStRepository = fireStRepository;
+            this.readJsonFile = readJsonFile;
       }
 
       //Methode pour calculer l'age en String
@@ -103,7 +110,7 @@ public class PersonService {
             for (Person person : personList) {
                   MedicalRecord medicalRecord = medicalRecRepository.findMedicalRecordByFirstnameAndLastname(person.getFirstName(), person.getLastName());
                   String age = calculateAge(medicalRecord.getBirthdate());
-                  Integer ageInt = Integer.parseInt(age);
+                  int ageInt = Integer.parseInt(age);
                   if (ageInt <= 18) {
                         List<Person> personList1 = personRepository.findFamilyMembersByLastName(person.getFirstName(), person.getLastName());
                         List<String> familyMembersList = personList1.stream().map(Person::getFirstName).collect(Collectors.toList());
@@ -116,17 +123,48 @@ public class PersonService {
 
       // Retourner les informations de chaque personne
 
-      public List<PersonInfoDTO> getListPersonInfoDTO(String firstName, String lastName){
+      public List<PersonInfoDTO> getListPersonInfoDTO(String firstName, String lastName) {
             List<PersonInfoDTO> personInfoDTOList = new ArrayList<>();
             List<Person> personList = personRepository.findAllPersonsByFirstNameAndLastName(firstName, lastName);
 
-            for (Person person : personList){
+            for (Person person : personList) {
                   MedicalRecord medicalRecord = medicalRecRepository.findMedicalRecordByFirstnameAndLastname(person.getFirstName(), person.getLastName());
                   String age = calculateAge(medicalRecord.getBirthdate());
-                  PersonInfoDTO personInfoDTO = new PersonInfoDTO(person.getLastName(), person.getAddress(),age, person.getEmail(), medicalRecord.getMedications(), medicalRecord.getAllergies());
+                  PersonInfoDTO personInfoDTO = new PersonInfoDTO(person.getLastName(), person.getAddress(), age, person.getEmail(), medicalRecord.getMedications(), medicalRecord.getAllergies());
                   personInfoDTOList.add(personInfoDTO);
             }
             return personInfoDTOList;
       }
 
+      //Ajouter une nouvelle personne a la liste
+      public ResponseEntity<Person> saveNewPerson(Person person) {
+            personRepository.findAllPersons().add(person);
+            if (Objects.isNull(person)) {
+                  return ResponseEntity.noContent().build();
+            }
+            URI location = ServletUriComponentsBuilder.fromCurrentRequest().path("/{firstName}").buildAndExpand(person.getFirstName()).toUri();
+            return ResponseEntity.created(location).build();
+      }
+
+      //Mettre à jour une personne de la liste
+      public void updateAnExistingPerson(Person person) {
+            List<Person> personList = personRepository.findAllPersons();
+
+            for (Person person1 : personList) {
+                  if (person1.getLastName().equals(person.getLastName()) && person1.getFirstName().equals(person.getFirstName())) {
+                        person1.setPhone(person.getPhone());
+                        person1.setEmail(person.getEmail());
+                  }
+            }
+            readJsonFile.getData().setPersons(personList);
+      }
+
+      //Supprimer une personne
+      public void deletePersonByFirstNameAndLastName(Person person) {
+            List<Person> personList = personRepository.findAllPersons();
+
+            personList.removeIf(p -> p.getFirstName().equals(person.getFirstName()) && p.getLastName().equals(person.getLastName()));
+
+            readJsonFile.getData().setPersons(personList);
+      }
 }

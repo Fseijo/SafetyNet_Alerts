@@ -5,6 +5,7 @@ import com.SafetyNetAlerts.App.repository.FireStRepository;
 import com.SafetyNetAlerts.App.service.FireStService;
 import com.SafetyNetAlerts.App.service.dto.FireStationDto;
 import com.SafetyNetAlerts.App.service.dto.FloodStationsDTO;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -32,4 +33,20 @@ public class FireStController {
 
     @GetMapping("/fireStation")
     public List<FireStation> listOfAllFireStations(){return fireStRepository.findAllFireStations();}
+
+    @PostMapping("/fireStation")
+    public ResponseEntity<FireStation> postNewFireStation(@RequestBody FireStation fireStation){
+        ResponseEntity<FireStation> fireStationResponseEntity = fireStService.save(fireStation);
+        return fireStationResponseEntity;
+    }
+
+    @PutMapping(value = "/fireStation")
+    public void updateStationNumber(@RequestBody FireStation fireStation){
+        fireStService.updateByStationNumber(fireStation);
+    }
+
+    @DeleteMapping("/fireStation")
+    public void deleteStation(@RequestBody FireStation fireStation){
+        fireStService.deleteStation(fireStation);
+    }
 }
