@@ -28,7 +28,7 @@ public class PersonController {
       }
 
       @RequestMapping(value = "phoneAlert", method = RequestMethod.GET)
-      public List<String> listPhoneNumberByFirestation(@RequestParam(name = "fireStationToFind")String fireStationToFind){
+      public List<String> listPhoneNumberByFireStation(@RequestParam(name = "fireStationToFind")String fireStationToFind){
             return personService.findAllPhoneNumbersByFireStation(fireStationToFind);
       }
 

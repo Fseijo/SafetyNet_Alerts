@@ -23,7 +23,6 @@ public class MedicalRecController {
       public List<MedicalRecord> listOfAllMedicalRecords(){
             return medicalRecRepository.findAllMedicalRecords();
       }
-
       @PostMapping("/medicalRecord")
       public ResponseEntity<MedicalRecord> postNewMedicalRecord(@RequestBody MedicalRecord medicalRecord){
             ResponseEntity<MedicalRecord> medicalRecordResponseEntity = medicalRecService.saveNewMedicalRecord(medicalRecord);

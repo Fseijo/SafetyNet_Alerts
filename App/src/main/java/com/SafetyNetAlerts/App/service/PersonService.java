@@ -20,9 +20,7 @@ import java.net.URI;
 import java.time.LocalDate;
 import java.time.Period;
 import java.time.format.DateTimeFormatter;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Objects;
+import java.util.*;
 import java.util.stream.Collectors;
 
 
@@ -57,14 +55,20 @@ public class PersonService {
       public List<String> findAllEmailsByCity(String city) {
             List<Person> personList = personRepository.findAllPersons();
             List<String> emails = new ArrayList<>();
+            List<String> emailsClean = new ArrayList<>();
 
             for (Person person : personList) {
                   if (person.getCity().contentEquals(city)) {
                         emails.add(person.getEmail());
                   }
             }
-
-            return emails;
+            for (String mails : emails){
+                  if (!emailsClean.contains((mails))){
+                        emailsClean.add(mails);
+                  }
+            }
+            Collections.sort(emailsClean);
+            return emailsClean;
       }
 
       //Retourner une liste des numéros de téléphone des résidents proches FireStation

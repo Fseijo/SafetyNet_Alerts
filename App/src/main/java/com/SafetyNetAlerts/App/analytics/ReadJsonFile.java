@@ -32,7 +32,7 @@ public class ReadJsonFile {
             Object dataJson = jsonP.parse(reader);
             JSONObject personObj = (JSONObject) dataJson;
             JSONArray personList = (JSONArray) personObj.get("persons");
-            JSONArray firestationsList = (JSONArray) personObj.get("firestations");
+            JSONArray fireStationsList = (JSONArray) personObj.get("firestations");
             JSONArray medicalRecList = (JSONArray) personObj.get("medicalrecords");
 
             for (Object o : personList) {
@@ -42,11 +42,11 @@ public class ReadJsonFile {
                   people.add(person);
             }
 
-            for (Object o : firestationsList) {
+            for (Object o : fireStationsList) {
 
                   JSONObject jsonObject = (JSONObject) o;
-                  FireStation firesatation = new FireStation(jsonObject.get("address").toString(), jsonObject.get("station").toString());
-                  fireStations.add(firesatation);
+                  FireStation fireStation = new FireStation(jsonObject.get("address").toString(), jsonObject.get("station").toString());
+                  fireStations.add(fireStation);
             }
 
             for (Object o : medicalRecList) {
