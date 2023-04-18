@@ -4,35 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1c02d7d1-ef26-48e3-8954-be141958b1a4" name="Changes" comment="Update 3.0">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__classworlds_classworlds_1_1_alpha_2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_maven_doxia_doxia_sink_api_1_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_maven_maven_artifact_2_0_2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_maven_maven_artifact_manager_2_0_2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_maven_maven_plugin_api_2_0_6.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_maven_maven_repository_metadata_2_0_2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_maven_reporting_maven_reporting_api_3_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_maven_shared_file_management_1_2_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_maven_shared_maven_shared_io_1_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_maven_wagon_wagon_provider_api_1_0_alpha_6.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_codehaus_plexus_plexus_container_default_1_0_alpha_9.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_codehaus_plexus_plexus_utils_3_0_22.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_jacoco_jacoco_maven_plugin_maven_plugin_0_8_8.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_jacoco_org_jacoco_agent_runtime_0_8_8.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_jacoco_org_jacoco_core_0_8_8.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_jacoco_org_jacoco_report_0_8_8.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_ow2_asm_asm_9_2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_ow2_asm_asm_analysis_9_2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_ow2_asm_asm_commons_9_2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_ow2_asm_asm_tree_9_2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/App/src/test/java/com/SafetyNetAlerts/App/controller/PersonControllerTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_ow2_asm_asm_9_3.xml" beforeDir="false" />
+    <list default="true" id="1c02d7d1-ef26-48e3-8954-be141958b1a4" name="Changes" comment="Update 3.1">
+      <change afterPath="$PROJECT_DIR$/App/src/test/java/com/SafetyNetAlerts/App/controller/FireStControllerTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/App/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/src/main/java/com/SafetyNetAlerts/App/analytics/ReadJsonFile.java" beforeDir="false" afterPath="$PROJECT_DIR$/App/src/main/java/com/SafetyNetAlerts/App/analytics/ReadJsonFile.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/src/main/java/com/SafetyNetAlerts/App/controller/MedicalRecController.java" beforeDir="false" afterPath="$PROJECT_DIR$/App/src/main/java/com/SafetyNetAlerts/App/controller/MedicalRecController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/src/main/java/com/SafetyNetAlerts/App/controller/PersonController.java" beforeDir="false" afterPath="$PROJECT_DIR$/App/src/main/java/com/SafetyNetAlerts/App/controller/PersonController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/src/main/java/com/SafetyNetAlerts/App/service/PersonService.java" beforeDir="false" afterPath="$PROJECT_DIR$/App/src/main/java/com/SafetyNetAlerts/App/service/PersonService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/src/test/java/com/SafetyNetAlerts/App/controller/PersonControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/App/src/test/java/com/SafetyNetAlerts/App/controller/PersonControllerTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -85,7 +60,7 @@
       <recent name="com.SafetyNetAlerts.App.repository" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.PersonControllerTest.listEmails">
+  <component name="RunManager" selected="JUnit.FireStControllerTest.listPersonsByStationNumber">
     <configuration name="SafetyNetAlertsApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.SafetyNetAlerts.App.SafetyNetAlertsApplication" />
       <module name="App" />
@@ -99,7 +74,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="PersonControllerTest.listEmails" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="FireStControllerTest.listPersonsByStationNumber" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="App" />
       <extension name="coverage">
         <pattern>
@@ -108,14 +83,14 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="com.SafetyNetAlerts.App.controller" />
-      <option name="MAIN_CLASS_NAME" value="com.SafetyNetAlerts.App.controller.PersonControllerTest" />
-      <option name="METHOD_NAME" value="listEmails" />
+      <option name="MAIN_CLASS_NAME" value="com.SafetyNetAlerts.App.controller.FireStControllerTest" />
+      <option name="METHOD_NAME" value="listPersonsByStationNumber" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="PersonControllerTest.listPhoneNumberByFireStation" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="PersonControllerTest.deletePerson" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="App" />
       <extension name="coverage">
         <pattern>
@@ -125,7 +100,39 @@
       </extension>
       <option name="PACKAGE_NAME" value="com.SafetyNetAlerts.App.controller" />
       <option name="MAIN_CLASS_NAME" value="com.SafetyNetAlerts.App.controller.PersonControllerTest" />
-      <option name="METHOD_NAME" value="listPhoneNumberByFireStation" />
+      <option name="METHOD_NAME" value="deletePerson" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="PersonControllerTest.listOfAllPersons" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="App" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.SafetyNetAlerts.App.controller.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.SafetyNetAlerts.App.controller" />
+      <option name="MAIN_CLASS_NAME" value="com.SafetyNetAlerts.App.controller.PersonControllerTest" />
+      <option name="METHOD_NAME" value="listOfAllPersons" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="PersonControllerTest.updatePersonFromTheList" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="App" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.SafetyNetAlerts.App.controller.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.SafetyNetAlerts.App.controller" />
+      <option name="MAIN_CLASS_NAME" value="com.SafetyNetAlerts.App.controller.PersonControllerTest" />
+      <option name="METHOD_NAME" value="updatePersonFromTheList" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -133,9 +140,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.PersonControllerTest.listEmails" />
-        <item itemvalue="JUnit.PersonControllerTest.listPhoneNumberByFireStation" />
+        <item itemvalue="JUnit.FireStControllerTest.listPersonsByStationNumber" />
         <item itemvalue="Application.SafetyNetAlertsApplication" />
+        <item itemvalue="JUnit.PersonControllerTest.deletePerson" />
+        <item itemvalue="JUnit.PersonControllerTest.updatePersonFromTheList" />
+        <item itemvalue="JUnit.PersonControllerTest.listOfAllPersons" />
       </list>
     </recent_temporary>
   </component>
@@ -190,7 +199,14 @@
       <option name="project" value="LOCAL" />
       <updated>1681723438024</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Update 3.1">
+      <created>1681739727819</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1681739727819</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -199,20 +215,21 @@
     <MESSAGE value="Update 1.3.0" />
     <MESSAGE value="Update 2.0" />
     <MESSAGE value="Update 3.0" />
-    <option name="LAST_COMMIT_MESSAGE" value="Update 3.0" />
+    <MESSAGE value="Update 3.1" />
+    <option name="LAST_COMMIT_MESSAGE" value="Update 3.1" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/App/src/test/java/com/SafetyNetAlerts/App/controller/PersonControllerTest.java</url>
+          <url>file://$PROJECT_DIR$/App/src/test/java/com/SafetyNetAlerts/App/controller/FireStControllerTest.java</url>
           <line>26</line>
-          <option name="timeStamp" value="42" />
+          <option name="timeStamp" value="19" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/App/src/test/java/com/SafetyNetAlerts/App/controller/PersonControllerTest.java</url>
-          <line>28</line>
-          <option name="timeStamp" value="43" />
+          <url>file://$PROJECT_DIR$/App/src/test/java/com/SafetyNetAlerts/App/controller/FireStControllerTest.java</url>
+          <line>24</line>
+          <option name="timeStamp" value="21" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
@@ -221,15 +238,16 @@
         <PinnedItemInfo parentTag="java.util.stream.ReferencePipeline$Head" memberName="combinedFlags" />
       </pinned-members>
     </pin-to-top-manager>
-    <watches-manager>
-      <configuration name="JUnit">
-        <watch expression="emailsList.get(22)" language="JAVA" />
-        <watch expression="emailsList.get(0)" />
-      </configuration>
-    </watches-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/SafetyNet_Alerts$PersonControllerTest_listEmails.ic" NAME="PersonControllerTest.listEmails Coverage Results" MODIFIED="1681732576512" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>com.SafetyNetAlerts.App.controller.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/SafetyNet_Alerts$All_in_SafetyNet_Alerts.ic" NAME="All in SafetyNet Alerts Coverage Results" MODIFIED="1681809766498" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/SafetyNet_Alerts$SafetyNetAlertsApplicationTests.ic" NAME="SafetyNetAlertsApplicationTests Coverage Results" MODIFIED="1681817102202" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>com.SafetyNetAlerts.App.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/SafetyNet_Alerts$PersonControllerTest_listOfAllPersons.ic" NAME="PersonControllerTest.listOfAllPersons Coverage Results" MODIFIED="1681817072731" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>com.SafetyNetAlerts.App.controller.*</FILTER>
     </SUITE>
   </component>
