@@ -26,7 +26,7 @@ public class ReadJsonFile {
       List<FireStation> fireStations = new ArrayList<>();
       List<MedicalRecord> medicalRecords = new ArrayList<>();
 
-
+      //Method to read the Json File /resources/jsonList.json
       public ReadJsonFile() throws IOException, ParseException {
             FileReader reader = new FileReader("C:\\Users\\Frank\\IdeaProjects\\SafetyNet Alerts\\App\\src\\main\\resources\\jsonList.json");
             Object dataJson = jsonP.parse(reader);
@@ -79,6 +79,7 @@ public class ReadJsonFile {
             this.data.setMedicalRecords(medicalRecords);
       }
 
+      //Save all in Data
       public Data getData(){return data;}
 
 
